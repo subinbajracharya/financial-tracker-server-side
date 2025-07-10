@@ -27,3 +27,16 @@ A Node.js REST API built with Express and MongoDB to manage user data for a fina
    git clone <repository-url>
    cd ft-api
    ```
+
+2. **Install dependencies:**
+
+   ```bash
+   yarn install
+   ```
+
+3. **Create a .env file in the project root:**
+
+   ```ini
+   MONGO_URL=mongodb://localhost:27017/ft-db
+   PORT=3000
+   ```
