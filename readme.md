@@ -37,6 +37,6 @@ A Node.js REST API built with Express and MongoDB to manage user data for a fina
 3. **Create a .env file in the project root:**
 
    ```ini
-   MONGO_URL=mongodb://localhost:27017/ft-db
+   MONGO_URL=<Database URL (remote or local)>
    PORT=3000
    ```
