@@ -23,7 +23,7 @@ export const registerUser = async (req, res) => {
         if (err.message.includes("E11000")) {
             return res.status(400).json({
                 status: false,
-                message: "User email already created!"
+                message: "Email already exits!"
             })
         } else {
             return res.status(500).json({

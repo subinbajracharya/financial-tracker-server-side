@@ -19,11 +19,18 @@ POST {{apiUrl}}/auth/login
 Content-Type: application/json
 
 {
-    "email": "noah@gmail.com",
+    "email": "dented12@gmail.com",
     "password": "1234"
 }
 
 ###
 POST {{apiUrl}}/transactions
 Content-Type: application/json
-Authorization: token
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbnRlZDEyQGdtYWlsLmNvbSIsImlhdCI6MTc1MjQ2NDQ1NywiZXhwIjoxNzUyNTUwODU3fQ.xHrTemb54mjMyGUAjqoyZxOSS2MfbDGZFapLK2HELx4
+
+{
+    "type": "income",
+    "date": "07-14-2025",
+    "description": "Salary",
+    "amount": "1000"
+}
