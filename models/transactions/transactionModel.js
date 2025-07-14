@@ -19,6 +19,7 @@ export const deleteTransaction = (id, userId) => {
 }
 
 // Delete multiple transactions
+// ['1','2','3']
 export const deleteTransactionsByUserId = (idsToDelete, userId) => {
     return Transaction.deleteMany({
         _id: { $in: idsToDelete },

@@ -4,7 +4,8 @@ import dotenv from "dotenv"
 dotenv.config()
 import mongoConnection from "./config/mongoConfig.js";
 import { loginUser, registerUser } from "./controllers/authControllers.js";
-import { createTransaction } from "./controllers/transactionControllers.js";
+import { createTransaction, getTransactions, removeMultipleTransactions, removeTransaction } from "./controllers/transactionControllers.js";
+import { auth } from "./middleware/authMiddleWare.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000
@@ -31,8 +32,17 @@ app.post("/api/v1/auth", registerUser)
 // Login user
 app.post("/api/v1/auth/login", loginUser)
 
-// Transaction
-app.post("/api/v1/transactions", createTransaction)
+// Create a transaction
+app.post("/api/v1/transactions", auth, createTransaction)
+
+// Get a transaction
+app.get("/api/v1/transactions", auth, getTransactions)
+
+// Delete a single transaction by ID
+app.delete("/api/v1/transactions/:id", auth, removeTransaction)
+
+// Delete multiple transactions
+app.delete("/api/v1/transactions", auth, removeMultipleTransactions)
 
 // mongo connection
 mongoConnection()
