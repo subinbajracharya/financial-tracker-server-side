@@ -1,18 +1,20 @@
-import express from "express";
-import bcrypt from "bcryptjs";
-import cors from "cors";
-import dotenv from "dotenv";
+import express from "express"
+import cors from "cors"
+import dotenv from "dotenv"
 dotenv.config()
-
 import mongoConnection from "./config/mongoConfig.js";
+import { loginUser, registerUser } from "./controllers/authControllers.js";
 
 const app = express();
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
+// cors
 app.use(cors())
+
 // request body
 app.use(express.json())
 
+// Routes
 // base get api
 app.get("/", (req, res) => {
     res.json({
@@ -21,6 +23,14 @@ app.get("/", (req, res) => {
     })
 })
 
+// AUTH
+// POST request to register users
+app.post("/api/v1/auth", registerUser)
+
+// Login user
+app.post("/api/v1/auth/login", loginUser)
+
+// mongo connection
 mongoConnection()
     .then(() => {
         console.log("MONGO CONNECTION SUCCESS!!")
@@ -29,7 +39,7 @@ mongoConnection()
             if (err) {
                 console.log("SERVER STARTING ERROR!")
             } else {
-                console.log("server STARTED AT PORT: ", PORT)
+                console.log("SERVER STARTED AT PORT: ", PORT)
             }
         });
     })

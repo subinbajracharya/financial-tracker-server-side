@@ -1,0 +1,29 @@
+@baseUrl = http://localhost:3000
+@apiUrl = {{baseUrl}}/api/v1
+
+# GET REQUEST
+GET {{baseUrl}}
+
+###
+POST {{apiUrl}}/auth
+Content-Type: application/json
+
+{
+    "username": "dented1",
+    "email": "dented12@gmail.com",
+    "password": "1234"
+}
+
+###
+POST {{apiUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "noah@gmail.com",
+    "password": "1234"
+}
+
+###
+POST {{apiUrl}}/transactions
+Content-Type: application/json
+Authorization: token
