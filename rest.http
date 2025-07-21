@@ -41,7 +41,7 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGdtYWlsLmNvbSIsImlhdCI6MTc1MjQ2OTQ2MCwiZXhwIjoxNzUyNTU1ODYwfQ.gQUaLEXSUfqjuc4CYZ_dtY4GZg75RbVpC73n9ItCPBg
 
 ###
-DELETE {{apiUrl}}/transactions/68748ff3f7b387570feff651
+DELETE {{apiUrl}}/transactions/68749004f7b387570feff654
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGdtYWlsLmNvbSIsImlhdCI6MTc1MjQ4NzUxMywiZXhwIjoxNzUyNTczOTEzfQ.NULdADOvl0CSBMUoBd3hqf-5a0aC8lZgJW9rEZGBSV8
 
 ###

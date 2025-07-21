@@ -79,10 +79,8 @@ export const removeMultipleTransactions = async (req, res) => {
         console.log(req.body)
         console.log(req.user)
 
-        // Keep only valid ObjectIds
-        let validIds = ids.filter(mongoose.Types.ObjectId.isValid);
         let userId = req.user._id
-        let finalResult = await deleteTransactionsByUserId(validIds, userId)
+        let finalResult = await deleteTransactionsByUserId(ids, userId)
 
         return res.status(200).json({
             status: true,
